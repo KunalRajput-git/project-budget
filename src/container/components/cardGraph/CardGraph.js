@@ -8,6 +8,7 @@ import ReChart from "./reChart";
 
 const CardGraph = () => {
   const [totalInvested, setTotalInvested] = useState(0);
+
   const state = useSelector((state) => state.cardReducers.cardData);
 
   useEffect(() => {

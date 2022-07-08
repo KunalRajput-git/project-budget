@@ -6,23 +6,30 @@ import "./addCard.css";
 const AddCard = () => {
   const dispatch = useDispatch();
   const [cName, setCName] = useState("");
-  const [budget, setBudget] = useState(0);
-  const [endDate, setEndDate] = useState("");
+  const [budget, setBudget] = useState("");
+  const [endDate, setEndDate] = useState("2022-07-08");
   const [isEditEnabled, setIsEditEnabled] = useState(false);
 
   const state = useSelector((state) => state.cardReducers.selectedData);
 
   useEffect(() => {
-    setCName(state.projectName);
-    setBudget(state.projectBudget);
-    setEndDate(endDate);
-    setIsEditEnabled(state.editEnable);
+    setCName(state.projectName || "");
+    setBudget(state.projectBudget || "");
+    setEndDate(state.projectEndDate || "");
+    setIsEditEnabled(state.editEnable || false);
   }, [state]);
 
   const cardData = {
     projectName: cName,
     projectBudget: budget,
     projectEndDate: endDate,
+  };
+
+  const onAddHandler = () => {
+    dispatch(addCardData(cardData));
+    setCName("");
+    setBudget("");
+    setEndDate("");
   };
 
   return (
@@ -53,15 +60,7 @@ const AddCard = () => {
       />
 
       {!isEditEnabled ? (
-        <button
-          onClick={() => {
-            dispatch(addCardData(cardData));
-            setCName("");
-            setBudget("");
-            setEndDate("");
-          }}
-          className="cardAddBtn"
-        >
+        <button onClick={() => onAddHandler()} className="cardAddBtn">
           Add Card
         </button>
       ) : (
