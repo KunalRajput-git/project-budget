@@ -35,7 +35,6 @@ export const cardReducers = (state = initialData, action) => {
 
     case "SELECTED_CARD_DATA":
       const selectedCardData = action.payload;
-      console.log(selectedCardData);
       let editEnable = true;
       const fData = state.cardData.filter(
         (data) => data.id !== selectedCardData.id

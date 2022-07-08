@@ -6,8 +6,6 @@ import { useSelector } from "react-redux";
 
 const DashBoard = () => {
   const state = useSelector((state) => state.cardReducers.cardData);
-
-  console.log(state);
   return (
     <>
       <Navbar />

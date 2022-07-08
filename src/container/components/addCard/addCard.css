@@ -39,12 +39,10 @@ input::placeholder {
 
 @media screen and (max-width: 760px) {
   .cardAddContainer {
-    /* border: 2px solid #f3f0f0; */
     border: 1.5px solid #dddada;
     padding: 1.2rem;
     border-radius: 5px;
     width: 80%;
-    /* background-color: #fdfcfa; */
   }
   .cardAddContainer input,
   .cardAddBtn {
