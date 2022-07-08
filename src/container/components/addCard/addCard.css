@@ -1,0 +1,54 @@
+.cardAddContainer {
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 8px 12px;
+  margin: 3rem auto 2rem auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.cardAddContainer input {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+  border-radius: 3px;
+  outline: none;
+  text-align: center;
+  width: 20%;
+  border: 1.5px solid #dddada;
+  padding: 0.8rem;
+}
+
+.cardAddBtn {
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: 2px solid #f92c85;
+  width: 20%;
+  padding: 0.8rem;
+  outline: none;
+  background-color: #f92c85;
+  color: white;
+  border-radius: 3px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+input::placeholder {
+  color: #c2bebe;
+}
+
+@media screen and (max-width: 760px) {
+  .cardAddContainer {
+    /* border: 2px solid #f3f0f0; */
+    border: 1.5px solid #dddada;
+    padding: 1.2rem;
+    border-radius: 5px;
+    width: 80%;
+    /* background-color: #fdfcfa; */
+  }
+  .cardAddContainer input,
+  .cardAddBtn {
+    width: 100%;
+    margin: 0.3rem;
+  }
+}
